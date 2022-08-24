@@ -5,7 +5,7 @@ account: ajestudillo
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6839183
-bundleId: 6233657
+bundleId: 6233687
 url: https://ajestudillo.shinyapps.io/statshinyapps-master/
-when: 1661351707.60709
-lastSyncTime: 1661351707.6071
+when: 1661352221.5266
+lastSyncTime: 1661352221.52661
