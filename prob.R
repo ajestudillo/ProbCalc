@@ -45,11 +45,11 @@ fluidRow(
                   plotOutput("plot"),
                   div(textOutput("area"), align = "center", style="font-size:150%;")
                   ),
-           tabPanel("Help", 
-                    HTML("<iframe width=\"560\" height=\"315\" 
-                                 src=\"https://www.youtube.com/embed/ZL8Jtow7IlI\" 
-                                  frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>")
-           )
+           # tabPanel("Help", 
+           #          HTML("<iframe width=\"560\" height=\"315\" 
+           #                       src=\"https://www.youtube.com/embed/ZL8Jtow7IlI\" 
+           #                        frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>")
+           #)
          )
   ) # close column
 ) # close fluid row
