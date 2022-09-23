@@ -1,6 +1,6 @@
 # Functions
 
-FTail <- function(U=NULL, df_n=100, df_d = 100, curveColor=1, border=1, col="#4F2D7F", xlim=NULL, ylim=NULL, xlab='', ylab='', detail=999){
+FTail <- function(U=NULL, df_n=100, df_d = 100, curveColor=1, border=1, col="#808080", xlim=NULL, ylim=NULL, xlab='', ylab='', detail=999){
   if(U <= 5){xlim <- c(0,5)}
   if(U > 5){xlim <- c(0,U+0.01*U)}
   temp <- diff(range(xlim))
@@ -181,64 +181,48 @@ buildAxis <- function(side, limits, n, nMin = 2, nMax = 10, extend = 2, eps = 10
 # UI
 
 ui <- fluidPage(
-  
   fluidRow(
-    
     # input goes here
-    column(4,
-           
-           ##change the title here
-           div(helpText('Probability calculator'), align = "left", style="font-size:140%"),
-           
-           br(),
-           
-           selectInput(inputId = "dist",
-                       label = "Distribution:",
-                       choices = c("Normal"      = "rnorm",
-                                   "t"           = "rt",
-                                   "F"           = "rf"),
-                       selected = "rnorm"),
-           uiOutput("mean"),
-           uiOutput("sd"),
-           uiOutput("N"),
-           # helpText("sd adjusted for number of participants"),
-           # div(textOutput("sdadj"),style="text-indent:20px;font-size:100%;"),
-           uiOutput("df_1"),
-           uiOutput("df_2"),
-           
-           br(),
-           br(),
-           
-           helpText("Region of p-value:"),
-           div(textOutput("region"),style="text-indent:20px;font-size:100%;"),
-           br(),
-           
-           uiOutput("tail"),
-           uiOutput("lower_bound"),
-           uiOutput("upper_bound"),
-           
-           
-           uiOutput("a"),
-           uiOutput("b")  
+    column(
+      4,
+      div(helpText('Probability calculator'), align = "left", style="font-size:140%"),
+      br(),
+      selectInput(inputId = "dist",
+                 label = "Distribution:",
+                 choices = c("Normal"      = "rnorm",
+                             "t"           = "rt",
+                             "F"           = "rf"),
+                 selected = "rnorm"),
+      uiOutput("mean"),
+      uiOutput("sd"),
+      uiOutput("N"),
+      uiOutput("df_1"),
+      uiOutput("df_2"),
+      br(),
+      br(),
+      helpText("Region of p-value:"),
+      div(textOutput("region"),style="text-indent:20px;font-size:100%;"),
+      br(),
+      uiOutput("tail"),
+      uiOutput("lower_bound"),
+      uiOutput("upper_bound"),
+      uiOutput("a"),
+      uiOutput("b")  
     ), # close column 1
     
     # output goes here
-    column(8,
-           tabsetPanel(
-             tabPanel("Summary",
-                      plotOutput("plot"),
-                      div(textOutput("area"), align = "center", style="font-size:150%;")
-             ),
-             # tabPanel("Help", 
-             #          HTML("<iframe width=\"560\" height=\"315\" 
-             #                       src=\"https://www.youtube.com/" 
-             #                        frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>")
-             #)
-           )
-    ) # close column
-  ) # close fluid row
-  
-)
+    column(
+      8,
+      tabsetPanel(
+        tabPanel(
+          "Summary",
+          plotOutput("plot"),
+          div(textOutput("area"), align = "center", style="font-size:150%;")
+        ),
+        )
+      ) # close column 2
+    ) # close fluid row
+  ) # close Fluid page
 
 
 
