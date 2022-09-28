@@ -1,5 +1,5 @@
 # This is where IT have installed the shiny library
-.libPaths(new=c("C:/ProgramData/R/Rlibs/R420"))
+#.libPaths(new=c("C:/ProgramData/R/Rlibs/R420"))
 # Functions
 
 FTail <- function(U=NULL, df_n=100, df_d = 100, curveColor=1, border=1, col="#808080", xlim=NULL, ylim=NULL, xlab='', ylab='', detail=999){
@@ -592,5 +592,4 @@ server = function(input, output) {
     })
   } # close server 
 
-shinyApp(ui, server)
 
