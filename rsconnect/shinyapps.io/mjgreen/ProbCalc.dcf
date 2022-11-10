@@ -1,0 +1,13 @@
+name: ProbCalc
+title: ProbCalc
+username:
+account: mjgreen
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7592116
+bundleId: 6500244
+url: https://mjgreen.shinyapps.io/ProbCalc/
+when: 1668115573.47209
+lastSyncTime: 1668115573.47212
+asMultiple: FALSE
+asStatic: FALSE
